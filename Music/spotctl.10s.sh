@@ -34,7 +34,7 @@ case "$1" in
     exit
 esac
 
-state=$(spotctl status | sed -n 1p | grep -o playing || echo paused)
+state=$(spotctl status | sed -n 1p | grep -o playing || echo paused) || echo "not playing"
 
 if [ "$state" = "playing" ]; then
   status=$(spotctl status)

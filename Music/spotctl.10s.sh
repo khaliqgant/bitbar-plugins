@@ -41,10 +41,8 @@ if [ "$state" = "playing" ]; then
   track=$(echo "$status" | sed -n 4p | cut -c 8-)
   artist=$(echo "$status" | sed -n 2p | cut -c 9-)
   album=$(echo "$status" | sed -n 3p | cut -c 8-)
-  shortened_track=$(echo "$track" | shorten)
-  shortened_artist=$(echo "$artist" | shorten)
 
-  echo "▶ $shortened_track - $shortened_artist"
+  echo "▶ $artist - $shortened_track"
   echo "---"
   echo "Track: $track | color=#666666"
   echo "Artist: $artist | color=#666666"
